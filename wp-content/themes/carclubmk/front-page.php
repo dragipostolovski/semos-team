@@ -13,11 +13,13 @@
             the_post(); ?>
 
                 <header>
-                    <nav></nav>
+                    <nav>
+                        
+                    </nav>
                 </header>
 
                 <main class="main">
-                    <article>
+                    <article id="<?php echo the_ID(); ?>">
                         <div class="container">
                             <?php the_content();?>
                         </div>
