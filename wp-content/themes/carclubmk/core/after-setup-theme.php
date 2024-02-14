@@ -1,14 +1,5 @@
 <?php
 
-<<<<<<< HEAD
-if( function_exists('theme_setup_functions') ) {
-
-    function theme_setup_functions() {
-        
-    }
-
-    add_action( 'after_setup_theme', 'theme_setup_functions' );
-=======
 if ( ! function_exists( 'theme_setup_functions' ) ) {
 
 	/**
@@ -147,5 +138,4 @@ if ( ! function_exists( 'pe_admin_enqueue_scripts' ) ) {
 	}
 
 	add_action( 'admin_enqueue_scripts', 'pe_admin_enqueue_scripts' );
->>>>>>> ffa1ff69d9e7283fd3272d58992c0b7a10b96fe7
 }
