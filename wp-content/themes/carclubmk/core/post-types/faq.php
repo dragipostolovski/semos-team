@@ -9,18 +9,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'PE_PostType_Lesson' ) ) {
+if ( ! class_exists( 'PE_PostType_FAQ' ) ) {
 	/**
 	 * Class responsible for registering a CPT
 	 */
-	class PE_PostType_Brand {
+	class PE_PostType_FAQ {
 
 		/**
 		 * Declare CPT name
 		 *
 		 * @var string
 		 */
-		private string $name = 'lesson';
+		private string $name = 'faq';
 
 
 		/**
@@ -44,68 +44,57 @@ if ( ! class_exists( 'PE_PostType_Lesson' ) ) {
 					$this->name,
 					array(
 						'labels'                    => array(
-							'name'                  => __( 'Lessons', 'projectsengine' ),
-							'singular_name'         => _x( 'Lesson', 'Site post type singular name', 'projectsengine' ),
-							'add_new'               => __( 'Add Lesson', 'projectsengine' ),
-							'add_new_item'          => __( 'Add New Lesson', 'projectsengine' ),
+							'name'                  => __( 'Questions', 'projectsengine' ),
+							'singular_name'         => _x( 'Question', 'Site post type singular name', 'projectsengine' ),
+							'add_new'               => __( 'Add Question', 'projectsengine' ),
+							'add_new_item'          => __( 'Add New Question', 'projectsengine' ),
 							'edit'                  => __( 'Edit', 'projectsengine' ),
-							'edit_item'             => __( 'Edit Lesson', 'projectsengine' ),
-							'new_item'              => __( 'New Lesson', 'projectsengine' ),
-							'view'                  => __( 'View Lesson', 'projectsengine' ),
-							'view_item'             => __( 'View Lesson', 'projectsengine' ),
-							'search_items'          => __( 'Search Lessons', 'projectsengine' ),
-							'not_found'             => __( 'No Lessons found', 'projectsengine' ),
-							'not_found_in_trash'    => __( 'No Lessons found in trash', 'projectsengine' ),
-							'parent'                => __( 'Parent Lesson', 'projectsengine' ),
-							'menu_name'             => __( 'Lessons', 'projectsengine' ),
-							'filter_items_list'     => __( 'Filter Lessons', 'projectsengine' ),
-							'items_list_navigation' => __( 'Lessons navigation', 'projectsengine' ),
-							'items_list'            => __( 'Lessons list', 'projectsengine' ),
-							'featured_image'        => _x( 'Lesson Avatar', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'projectsengine' ),
+							'edit_item'             => __( 'Edit Question', 'projectsengine' ),
+							'new_item'              => __( 'New Question', 'projectsengine' ),
+							'view'                  => __( 'View Question', 'projectsengine' ),
+							'view_item'             => __( 'View Question', 'projectsengine' ),
+							'search_items'          => __( 'Search Questions', 'projectsengine' ),
+							'not_found'             => __( 'No Questions found', 'projectsengine' ),
+							'not_found_in_trash'    => __( 'No Questions found in trash', 'projectsengine' ),
+							'parent'                => __( 'Parent Question', 'projectsengine' ),
+							'menu_name'             => __( 'Questions', 'projectsengine' ),
+							'filter_items_list'     => __( 'Filter Questions', 'projectsengine' ),
+							'items_list_navigation' => __( 'Questions navigation', 'projectsengine' ),
+							'items_list'            => __( 'Questions list', 'projectsengine' ),
+							'featured_image'        => _x( 'Question Avatar', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'projectsengine' ),
 							'set_featured_image'    => _x( 'Set avatar image', 'Overrides the “Set featured image” phrase for this post type. Added in 4.3', 'projectsengine' ),
 							'remove_featured_image' => _x( 'Remove avatar image', 'Overrides the “Remove featured image” phrase for this post type. Added in 4.3', 'projectsengine' ),
 							'use_featured_image'    => _x( 'Use as avatar image', 'Overrides the “Use as featured image” phrase for this post type. Added in 4.3', 'projectsengine' ),
 						),
-						'menu_icon'           => 'dashicons-course',
-						'public'              => true,
-						'exclude_from_search' => false,
-						'publicly_queryable'  => true,
+						'menu_icon'           => 'dashicons-faq',
+						'public'              => false,
+						'exclude_from_search' => true,
+						'publicly_queryable'  => false,
 
 						// bool - Whether to generate and allow a UI for managing this post type in the admin. Default is value of $public.
 						'show_ui'			  => true,
 						
 						'show_in_menu'		  => true,
 						'show_in_nav_menus'   => true,
-						'show_in_rest'        => true,
-						'has_archive'         => true,
+						'show_in_rest'        => false,
+						'has_archive'         => false,
 						'capability_type'	  => 'post',
 						'capabilities'		  => array(),
 						'rewrite'			  => array(),
-						'can_export'		  => true,
-						'supports'            => array( 'title', 'excerpt', 'thumbnail', 'editor', 'comments', 'page-attributes', 'custom-fields' ),
-						'menu_position'       => 7,
+						'can_export'		  => false,
+						'supports'            => array( 'title', 'thumbnail', 'editor', 'page-attributes' ),
+						'menu_position'       => 9,
 					)
 				);
 
-                register_taxonomy_for_object_type( 'category', 'lesson' );
-		        register_taxonomy_for_object_type( 'post_tag', 'lesson' );
-
                 $taxonomies = array(
-                    'course' => array(
-                        'name' => 'Courses',
-                        'singular_name' => 'Course',
-                        'object_type' => array( 'lesson' ),
-                        'public'                => true,
-                        'publicly_queryable'    => true,
-                        'hierarchical'          => true,
-					),
-					'part' => array(
-                        'name' => 'Parts',
-                        'singular_name' => 'Part',
-                        'object_type' => array( 'lesson' ),
-                        'public'                => true,
-                        'publicly_queryable'    => true,
-                        'hierarchical'          => true,
+                    'group' => array(
+                        'name' => 'Groupes',
+                        'singular_name' => 'Group',
+                        'object_type' => array( 'faq' ),
+                        'public'                => false,
+                        'publicly_queryable'    => false,
+                        'hierarchical'          => false,
                     )
                 );
 
@@ -155,5 +144,5 @@ if ( ! class_exists( 'PE_PostType_Lesson' ) ) {
         }
 	}
 
-	new PE_PostType_Lesson();
+	new PE_PostType_FAQ();
 }
