@@ -1,1 +1,22 @@
-/*# sourceMappingURL=style.css.map */
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.s-beginner__inner {
+  padding: 50px 0;
+}
+
+.c-headline {
+  text-align: center;
+}
+
+.c-cards__inner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.c-cards_card-body {
+  padding: 30px 15px;
+}/*# sourceMappingURL=style.css.map */

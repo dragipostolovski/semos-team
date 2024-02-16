@@ -119,7 +119,7 @@ if ( ! function_exists( 'pe_enqueue_scripts' ) ) {
 		) );
 	}
 
-	add_action( 'wp_enqueue_scripts', 'pe_enqueue_scripts' );
+	// add_action( 'wp_enqueue_scripts', 'pe_enqueue_scripts' );
 }
 
 
@@ -137,5 +137,17 @@ if ( ! function_exists( 'pe_admin_enqueue_scripts' ) ) {
 		) );
 	}
 
-	add_action( 'admin_enqueue_scripts', 'pe_admin_enqueue_scripts' );
+	// add_action( 'admin_enqueue_scripts', 'pe_admin_enqueue_scripts' );
+}
+
+
+
+
+
+
+
+add_action( 'wp_enqueue_scripts', 'carclub_scripts' );
+
+function carclub_scripts() {
+	wp_enqueue_style( 'carclub-styles', get_template_directory_uri() . '/assets/css/style.css');
 }
