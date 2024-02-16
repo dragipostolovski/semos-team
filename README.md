@@ -14,6 +14,8 @@
 - Тема: Да се креира темата и да се додадат потребните фајлови.
 - Име на темата: CarClubMK ( Text Doman: carclubmk )
 - Да се додадат ‘Template Files’ за препознавање на почетната страна, постовите и страниците ( single.php, front-page.php, page.php ).
+- Да се додаде 'style.css'
+- Да се користи style.scss и да се инсталира 'Live Sass Compiler'
 
 ## single.php
 
