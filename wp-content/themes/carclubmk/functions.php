@@ -26,4 +26,9 @@ $ownRaincoat = false;
  * 
  */
 
+
+ function decideJog() {
+    
+ }
+
  decideJog();
