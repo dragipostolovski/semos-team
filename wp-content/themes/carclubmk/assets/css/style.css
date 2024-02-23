@@ -48,3 +48,18 @@ img {
   padding: 35px 15px 30px 15px;
   position: relative;
 }
+
+.s-beginner__inner {
+  padding: 60px 10px;
+}
+
+.c-headline {
+  text-align: center;
+}
+
+.c-cards__inner {
+  display: grid;
+  gap: 25px;
+  padding: 60px 10px 0 10px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}

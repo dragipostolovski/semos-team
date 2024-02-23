@@ -35,3 +35,24 @@
         position: relative;
     }
 }
+
+// SECTION BEGGINER
+
+.s-beginner {
+    &__inner {
+        padding: 60px 10px;
+    }
+}
+
+.c-headline {
+    text-align: center;
+}
+
+.c-cards {
+    &__inner {
+        display: grid;
+        gap: 25px;
+        padding: 60px 10px 0 10px;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}

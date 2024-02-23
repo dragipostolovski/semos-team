@@ -1,10 +1,17 @@
 <?php
 
+// Se mora da bide dodadeno vo functions.php
+// Za da ne trupame se na isto mesto kodot moze da go podelime.
+// Se kreira nov fajl i so require_once ili require ke go vklucime tuka za WP da moze da go procita.
 require_once 'core/theme-setup.php';
 
+/**
+ * This function will return array of workers with their information.
+ *
+ * @return array
+ */
 function workers() {
-    return 
-    array(
+    return array(
         array(
             'first_name' => 'Nikolina',
             'last_name' => 'Stojanova',
@@ -67,3 +74,17 @@ function workers() {
         )
     );
 };
+
+// Data types
+$mobilePhone = 'Samsung';
+$decimalNumber = 3.6;
+$integerNumber = 4;
+$booleanvariable = true;
+$arrayOfEelements = array(
+    'Verica', // string
+    15, // int
+    array ( // two dimensional array
+        'age' => 15,
+        'weight' => 92
+    )
+);

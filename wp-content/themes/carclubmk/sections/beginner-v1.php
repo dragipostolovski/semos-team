@@ -46,13 +46,9 @@
                     <div class="c-cards__card">
                         <div class="c-cards_card-header"></div>
                         <div class="c-cards_card-body">
-                            
-                            <div class="c-cards_card-icon">
-
-                            </div>
-                            <div class="c-cards_card-title">
+                            <h3 class="c-cards_card-title">
                                 <?php echo $card['title']; ?>
-                            </div>
+                            </h3>
                             <div class="c-cards_card-desc">
                                 <?php echo $desc; ?>
                             </div>

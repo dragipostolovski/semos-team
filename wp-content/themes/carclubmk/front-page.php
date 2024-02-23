@@ -9,7 +9,7 @@ get_header(); ?>
             
             <?php
 
-            get_template_part( 'sections/begginer', 'v1' ); ?>
+            get_template_part( 'sections/beginner', 'v1' ); ?>
 
             <!-- section array workers -->
             <section class="c-worker">

@@ -16,6 +16,7 @@
 - Да се додадат ‘Template Files’ за препознавање на почетната страна, постовите и страниците ( single.php, front-page.php, page.php ).
 - Да се додаде 'style.css'
 - Да се користи style.scss и да се инсталира 'Live Sass Compiler'
+- Да се направи секција 'beginner'
 
 ## single.php
 
