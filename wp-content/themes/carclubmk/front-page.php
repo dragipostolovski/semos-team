@@ -9,13 +9,15 @@ get_header(); ?>
             
             <?php
 
+            $workers = workers();
+
             get_template_part( 'sections/beginner', 'v1' ); ?>
 
             <!-- section array workers -->
             <section class="c-worker">
                 <div class="c-worker__inner container">
                    
-                    <?php foreach( workers() as $worker ) { ?>
+                    <?php foreach( $workers as $worker ) { ?>
                         <div class="c-worker__card">
 
                             <div class="c-worker__header" style="--color: <?php echo $worker['color']; ?>;"></div>
@@ -39,6 +41,20 @@ get_header(); ?>
                 </div>
             </section>
 
+             <!-- check who is older between two coworkers -->
+             <section class="s-beginner">
+                <div class="s-beginner__inner container">
+
+                    <div class="c-headline">
+                        <h2 class="c-headline__main">
+                            <h2>Between two coworkers check who is older.</h2>
+                        </h2>                        
+                        <div class="c-headline__after">
+                            <?php whoIsOlder( $workers[0], $workers[1] ); ?>
+                        </div>
+                    </div>
+                </div>
+             </section>
             
         </div>
     </div>

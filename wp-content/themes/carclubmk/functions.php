@@ -33,7 +33,7 @@ function workers() {
             'desc' => 'Auctor augue mauris augue neque. Fringilla est ullamcorper eget nulla facilisi etiam dignissim diam.',
             'details' => array(
                 'date_of_birth' => 1988,
-                'age' => 36,
+                'age' => 35,
                 'height' => 175,
                 'weight' => 85
             ),
@@ -74,3 +74,5 @@ function workers() {
         )
     );
 };
+
+require_once 'exercises/isOlder.php';

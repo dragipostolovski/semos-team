@@ -12,6 +12,12 @@
     &__card {
         box-shadow: rgba(9,30,66,.15) 0px .5rem 1rem 0px;
         border-radius: $border_radius;
+        transition: all .3s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.1);
+        }
     }
 
     &__header {

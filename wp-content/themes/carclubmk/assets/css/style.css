@@ -67,6 +67,9 @@ a:hover {
           align-items: center;
   gap: 20px;
 }
+.site-navigation ul a {
+  font-size: 20px;
+}
 
 .news__title h1:after {
   content: "";
@@ -103,6 +106,13 @@ a:hover {
   -webkit-box-shadow: rgba(9, 30, 66, 0.15) 0px 0.5rem 1rem 0px;
           box-shadow: rgba(9, 30, 66, 0.15) 0px 0.5rem 1rem 0px;
   border-radius: 8px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.c-worker__card:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 .c-worker__header {
   background: var(--color);
