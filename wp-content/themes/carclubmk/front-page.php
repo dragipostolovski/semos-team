@@ -1,39 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="mystyle.css">
-    <?php wp_head(); ?>
-</head>
-<body>
-    
-    <?php if( have_posts() ):
-        while ( have_posts() ): 
-            the_post(); ?>
+<?php
 
-                <header>
-                    <nav>
-                        
-                    </nav>
-                </header>
+get_header(); ?>
 
-                <main class="main">
-                    <article id="<?php echo the_ID(); ?>">
-                        <div class="container">
-                            <?php the_content();?>
+<main class="site-main">
+
+    <div class="front-page">
+        <div class="front-page__inner">
+
+
+            <!-- section array workers -->
+            <section class="c-worker">
+                <div class="c-worker__inner container">
+                   
+                    <?php foreach( workers() as $worker ) { ?>
+                        <div class="c-worker__card">
+
+                            <div class="c-worker__header" style="--color: <?php echo $worker['color']; ?>;"></div>
+                            <div class="c-worker__body">
+                                <div class="c-worker__img">
+                                    <img src="<?php echo get_template_directory_uri() . '/assets/img/profile.png'; ?>" alt="<?php echo $worker['first_name']; ?>" />
+                                </div>
+                                <div class="c-worker__title">
+                                    <h3 class="worker__heading">
+                                        <?php echo $worker['first_name']; ?> <?php echo $worker['last_name']; ?>
+                                    </h3>
+                                </div>
+                                <div class="c-worker__desc">
+                                    <?php echo $worker['desc']; ?>
+                                </div>
+                            </div>
+
                         </div>
-                    </article>
-                </main>
+                    <?php } ?>
 
-                <footer>
+                </div>
+            </section>
 
-                </footer>
+            
+        </div>
+    </div>
 
-            <?php
-        endwhile;
-    endif; ?>
+</main>
 
-    <?php wp_footer(); ?>
-</body>
-</html>
+<?php get_footer(); ?>

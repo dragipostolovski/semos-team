@@ -9,11 +9,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'PE_PostType_FAQ' ) ) {
+if ( ! class_exists( 'CCMK_PostType_FAQ' ) ) {
 	/**
 	 * Class responsible for registering a CPT
 	 */
-	class PE_PostType_FAQ {
+	class CCMK_PostType_FAQ {
 
 		/**
 		 * Declare CPT name
@@ -66,7 +66,6 @@ if ( ! class_exists( 'PE_PostType_FAQ' ) ) {
 							'remove_featured_image' => _x( 'Remove avatar image', 'Overrides the “Remove featured image” phrase for this post type. Added in 4.3', 'projectsengine' ),
 							'use_featured_image'    => _x( 'Use as avatar image', 'Overrides the “Use as featured image” phrase for this post type. Added in 4.3', 'projectsengine' ),
 						),
-						'menu_icon'           => 'dashicons-faq',
 						'public'              => false,
 						'exclude_from_search' => true,
 						'publicly_queryable'  => false,
@@ -144,5 +143,5 @@ if ( ! class_exists( 'PE_PostType_FAQ' ) ) {
         }
 	}
 
-	new PE_PostType_FAQ();
+	new CCMK_PostType_FAQ();
 }

@@ -1,5 +1,65 @@
 <?php
 
+if ( ! function_exists( 'ccmk_enqueue_scripts' ) ) {
+	function ccmk_enqueue_scripts() {
+		wp_enqueue_style( 'ccmk-styles', get_template_directory_uri() . '/assets/css/style.css', array(), filemtime( get_template_directory() . '/assets/css/style.css' ) );
+
+		$post 			= get_queried_object();
+		$user_id 		= 0;
+		$post_slug 		= '';
+		$theme_domain 	= wp_get_theme()->get( 'TextDomain' );
+		$version      	= wp_get_theme()->get( 'Version' );
+		$theme_name   	= wp_get_theme()->get( 'Name' );
+		$namespace    	= $theme_domain . '-api/v1';
+		$post_type 		= '';
+
+		if( is_singular( 'plugin' ) ):
+			$post_type = 'plugin';
+		endif;
+		
+		if( is_user_logged_in() ) {
+			$user_id = get_current_user_id();
+		}
+        
+		if( $post && !is_archive() ):
+        	$post_slug = $post->post_name;
+		endif;
+
+		wp_enqueue_script( 'ccmk-script', get_template_directory_uri() . '/assets/js/script.js', array(), filemtime( get_template_directory() . '/assets/js/script.js' ), array( 'strategy' => 'async', 'in_footer' => true ) );
+		wp_enqueue_script( 'ccmk-script-tickets', get_template_directory_uri() . '/assets/js/tickets.js', array(), filemtime( get_template_directory() . '/assets/js/tickets.js' ), array( 'strategy' => 'async', 'in_footer' => true ) );
+		wp_localize_script( 'ccmk-script', $theme_domain, array(
+			'ajax_url'  			=> admin_url( "admin-ajax.php" ),
+			'site_url'  			=> site_url(),
+			'nonce'     			=> wp_create_nonce( 'wp_rest' ),
+			'namespace' 			=> $namespace,
+			'post_slug' 			=> $post_slug,
+            'post_id' 				=> get_queried_object_id(),
+			'is_user_logged_in'		=> is_user_logged_in(),
+			'user_id' 				=> $user_id,
+			'post_type'				=> $post_type
+		) );
+	}
+
+	add_action( 'wp_enqueue_scripts', 'ccmk_enqueue_scripts' );
+}
+
+if ( ! function_exists( 'ccmk_admin_enqueue_scripts' ) ) {
+	function pe_admin_enqueue_scripts() {
+		wp_enqueue_style( 'pe-admin-styles', get_template_directory_uri() . '/assets/css/admin.min.css', array(), filemtime( get_template_directory() . '/assets/css/admin.min.css' ) );
+
+		$theme_domain 	= wp_get_theme()->get( 'TextDomain' );
+
+		wp_enqueue_script( 'pe-admin-script', get_template_directory_uri() . '/assets/js/admin.min.js', array(),  wp_get_theme()->get( 'Version' ), array( 'strategy' => 'async', 'in_footer' => true ) );
+		wp_localize_script( 'pe-admin-script', $theme_domain, array(
+			'site_url'  			=> site_url(),
+			'nonce'     			=> wp_create_nonce( 'wp_rest' ),
+			'screen'				=> get_current_screen()
+		) );
+	}
+
+	// add_action( 'admin_enqueue_scripts', 'ccmk_admin_enqueue_scripts' );
+}
+
 if ( ! function_exists( 'theme_setup_functions' ) ) {
 
 	/**
@@ -14,7 +74,7 @@ if ( ! function_exists( 'theme_setup_functions' ) ) {
 		 * replace to change 'custom' to the name of your theme in all
 		 * template files.
 		 */
-		load_theme_textdomain( 'projectsengine', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'carclubmk', get_template_directory() . '/languages' );
 
 		// Adds RSS feed links to <head> for posts and comments.
 		add_theme_support( 'automatic-feed-links' );
@@ -77,65 +137,4 @@ if ( ! function_exists( 'theme_setup_functions' ) ) {
 	}
 
 	add_action( 'after_setup_theme', 'theme_setup_functions' );
-}
-
-if ( ! function_exists( 'pe_enqueue_scripts' ) ) {
-	function pe_enqueue_scripts() {
-		wp_enqueue_style( 'pe-styles', get_template_directory_uri() . '/assets/css/public.min.css', array(), filemtime( get_template_directory() . '/assets/css/public.min.css' ) );
-
-		$post 			= get_queried_object();
-		$user_id 		= 0;
-		$post_slug 		= '';
-		$theme_domain 	= wp_get_theme()->get( 'TextDomain' );
-		$version      	= wp_get_theme()->get( 'Version' );
-		$theme_name   	= wp_get_theme()->get( 'Name' );
-		$namespace    	= $theme_domain . '-api/v1';
-		$post_type 		= '';
-
-		if( is_singular( 'plugin' ) ):
-			$post_type = 'plugin';
-		endif;
-		
-		if( is_user_logged_in() ) {
-			$user_id = get_current_user_id();
-		}
-        
-		if( $post && !is_archive() ):
-        	$post_slug = $post->post_name;
-		endif;
-
-		wp_enqueue_script( 'pe-script', get_template_directory_uri() . '/assets/js/public.min.js', array(), filemtime( get_template_directory() . '/assets/js/public.min.js' ), array( 'strategy' => 'async', 'in_footer' => true ) );
-		wp_enqueue_script( 'pe-script-tickets', get_template_directory_uri() . '/assets/js/tickets.min.js', array(), filemtime( get_template_directory() . '/assets/js/tickets.min.js' ), array( 'strategy' => 'async', 'in_footer' => true ) );
-		wp_localize_script( 'pe-script', $theme_domain, array(
-			'ajax_url'  			=> admin_url( "admin-ajax.php" ),
-			'site_url'  			=> site_url(),
-			'nonce'     			=> wp_create_nonce( 'wp_rest' ),
-			'namespace' 			=> $namespace,
-			'post_slug' 			=> $post_slug,
-            'post_id' 				=> get_queried_object_id(),
-			'is_user_logged_in'		=> is_user_logged_in(),
-			'user_id' 				=> $user_id,
-			'post_type'				=> $post_type
-		) );
-	}
-
-	add_action( 'wp_enqueue_scripts', 'pe_enqueue_scripts' );
-}
-
-
-if ( ! function_exists( 'pe_admin_enqueue_scripts' ) ) {
-	function pe_admin_enqueue_scripts() {
-		wp_enqueue_style( 'pe-admin-styles', get_template_directory_uri() . '/assets/css/admin.min.css', array(), filemtime( get_template_directory() . '/assets/css/admin.min.css' ) );
-
-		$theme_domain 	= wp_get_theme()->get( 'TextDomain' );
-
-		wp_enqueue_script( 'pe-admin-script', get_template_directory_uri() . '/assets/js/admin.min.js', array(),  wp_get_theme()->get( 'Version' ), array( 'strategy' => 'async', 'in_footer' => true ) );
-		wp_localize_script( 'pe-admin-script', $theme_domain, array(
-			'site_url'  			=> site_url(),
-			'nonce'     			=> wp_create_nonce( 'wp_rest' ),
-			'screen'				=> get_current_screen()
-		) );
-	}
-
-	add_action( 'admin_enqueue_scripts', 'pe_admin_enqueue_scripts' );
 }

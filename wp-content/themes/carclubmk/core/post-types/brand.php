@@ -2,25 +2,25 @@
 /**
  * Register a Custom Post Type
  *
- * @package PE_Theme
+ * @package CCMK_Theme
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'PE_PostType_Lesson' ) ) {
+if ( ! class_exists( 'CCMK_PostType_Brand' ) ) {
 	/**
 	 * Class responsible for registering a CPT
 	 */
-	class PE_PostType_Brand {
+	class CCMK_PostType_Brand {
 
 		/**
 		 * Declare CPT name
 		 *
 		 * @var string
 		 */
-		private string $name = 'lesson';
+		private string $name = 'brand';
 
 
 		/**
@@ -44,29 +44,28 @@ if ( ! class_exists( 'PE_PostType_Lesson' ) ) {
 					$this->name,
 					array(
 						'labels'                    => array(
-							'name'                  => __( 'Lessons', 'projectsengine' ),
-							'singular_name'         => _x( 'Lesson', 'Site post type singular name', 'projectsengine' ),
-							'add_new'               => __( 'Add Lesson', 'projectsengine' ),
-							'add_new_item'          => __( 'Add New Lesson', 'projectsengine' ),
-							'edit'                  => __( 'Edit', 'projectsengine' ),
-							'edit_item'             => __( 'Edit Lesson', 'projectsengine' ),
-							'new_item'              => __( 'New Lesson', 'projectsengine' ),
-							'view'                  => __( 'View Lesson', 'projectsengine' ),
-							'view_item'             => __( 'View Lesson', 'projectsengine' ),
-							'search_items'          => __( 'Search Lessons', 'projectsengine' ),
-							'not_found'             => __( 'No Lessons found', 'projectsengine' ),
-							'not_found_in_trash'    => __( 'No Lessons found in trash', 'projectsengine' ),
-							'parent'                => __( 'Parent Lesson', 'projectsengine' ),
-							'menu_name'             => __( 'Lessons', 'projectsengine' ),
-							'filter_items_list'     => __( 'Filter Lessons', 'projectsengine' ),
-							'items_list_navigation' => __( 'Lessons navigation', 'projectsengine' ),
-							'items_list'            => __( 'Lessons list', 'projectsengine' ),
-							'featured_image'        => _x( 'Lesson Avatar', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'projectsengine' ),
-							'set_featured_image'    => _x( 'Set avatar image', 'Overrides the “Set featured image” phrase for this post type. Added in 4.3', 'projectsengine' ),
-							'remove_featured_image' => _x( 'Remove avatar image', 'Overrides the “Remove featured image” phrase for this post type. Added in 4.3', 'projectsengine' ),
-							'use_featured_image'    => _x( 'Use as avatar image', 'Overrides the “Use as featured image” phrase for this post type. Added in 4.3', 'projectsengine' ),
+							'name'                  => __( 'Brands', 'carclubmk' ),
+							'singular_name'         => _x( 'Brand', 'Site post type singular name', 'carclubmk' ),
+							'add_new'               => __( 'Add Brand', 'carclubmk' ),
+							'add_new_item'          => __( 'Add New Brand', 'carclubmk' ),
+							'edit'                  => __( 'Edit', 'carclubmk' ),
+							'edit_item'             => __( 'Edit Brand', 'carclubmk' ),
+							'new_item'              => __( 'New Brand', 'carclubmk' ),
+							'view'                  => __( 'View Brand', 'carclubmk' ),
+							'view_item'             => __( 'View Brand', 'carclubmk' ),
+							'search_items'          => __( 'Search Brands', 'carclubmk' ),
+							'not_found'             => __( 'No Brands found', 'carclubmk' ),
+							'not_found_in_trash'    => __( 'No Brands found in trash', 'carclubmk' ),
+							'parent'                => __( 'Parent Brand', 'carclubmk' ),
+							'menu_name'             => __( 'Brands', 'carclubmk' ),
+							'filter_items_list'     => __( 'Filter Brands', 'carclubmk' ),
+							'items_list_navigation' => __( 'Brands navigation', 'carclubmk' ),
+							'items_list'            => __( 'Brands list', 'carclubmk' ),
+							'featured_image'        => _x( 'Brand Logo', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'carclubmk' ),
+							'set_featured_image'    => _x( 'Set avatar image', 'Overrides the “Set featured image” phrase for this post type. Added in 4.3', 'carclubmk' ),
+							'remove_featured_image' => _x( 'Remove avatar image', 'Overrides the “Remove featured image” phrase for this post type. Added in 4.3', 'carclubmk' ),
+							'use_featured_image'    => _x( 'Use as avatar image', 'Overrides the “Use as featured image” phrase for this post type. Added in 4.3', 'carclubmk' ),
 						),
-						'menu_icon'           => 'dashicons-course',
 						'public'              => true,
 						'exclude_from_search' => false,
 						'publicly_queryable'  => true,
@@ -87,22 +86,22 @@ if ( ! class_exists( 'PE_PostType_Lesson' ) ) {
 					)
 				);
 
-                register_taxonomy_for_object_type( 'category', 'lesson' );
-		        register_taxonomy_for_object_type( 'post_tag', 'lesson' );
+                // register_taxonomy_for_object_type( 'category', 'brand' );
+		        // register_taxonomy_for_object_type( 'post_tag', 'brand' );
 
                 $taxonomies = array(
                     'course' => array(
-                        'name' => 'Courses',
-                        'singular_name' => 'Course',
-                        'object_type' => array( 'lesson' ),
+                        'name' => 'Models',
+                        'singular_name' => 'Model',
+                        'object_type' => array( 'brand' ),
                         'public'                => true,
                         'publicly_queryable'    => true,
                         'hierarchical'          => true,
 					),
 					'part' => array(
-                        'name' => 'Parts',
-                        'singular_name' => 'Part',
-                        'object_type' => array( 'lesson' ),
+                        'name' => 'Years',
+                        'singular_name' => 'Year',
+                        'object_type' => array( 'brand' ),
                         'public'                => true,
                         'publicly_queryable'    => true,
                         'hierarchical'          => true,
@@ -155,5 +154,5 @@ if ( ! class_exists( 'PE_PostType_Lesson' ) ) {
         }
 	}
 
-	new PE_PostType_Lesson();
+	new CCMK_PostType_Brand();
 }
