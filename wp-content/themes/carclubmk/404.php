@@ -8,11 +8,11 @@ get_header(); ?>
         <div class="article__inner container">
 
             <div class="article__title">
-                <h1><?php echo get_the_title(); ?></h1>
+                <h1>404</h1>
             </div>
 
             <div class="article__content">
-                <?php echo get_the_content(); ?>
+                The page does not exist.
             </div>
 
         </div>

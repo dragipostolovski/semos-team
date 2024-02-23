@@ -1,0 +1,18 @@
+.news {
+    &__title {
+        h1 {
+            &:after {
+                content: "";
+                height: 2px;
+                background: $primary_color;
+                display: block;
+                width: 130px;
+                margin-top: 10px;
+            }
+        }
+    }
+
+    &__articles {
+        padding: 20px 0;
+    }
+}

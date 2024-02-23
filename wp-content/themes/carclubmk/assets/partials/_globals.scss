@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
-$primaryColor: #0065ff;
+$primary_color: #0065ff;
 $border_radius: 8px;
 $bg_light: #fafbfc;
 
 * {
     font-family: 'Inter', sans-serif;
+}
+
+body {
+    margin: 0;
 }
 
 .container {
@@ -20,3 +24,50 @@ img {
     height: auto;
 }
 
+p {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+h1 {
+    font-size: 38px;
+    line-height: 48px;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 600;
+}
+
+a {
+    color: $primary_color;
+    text-decoration: none;
+    transition: all .3s ease;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.site-header {
+    background: $bg_light;
+
+    &__inner {
+        padding: 20px 0;
+    }
+}
+
+.site-navigation {
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+}
