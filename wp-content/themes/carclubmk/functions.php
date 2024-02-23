@@ -74,17 +74,3 @@ function workers() {
         )
     );
 };
-
-// Data types
-$mobilePhone = 'Samsung';
-$decimalNumber = 3.6;
-$integerNumber = 4;
-$booleanvariable = true;
-$arrayOfEelements = array(
-    'Verica', // string
-    15, // int
-    array ( // two dimensional array
-        'age' => 15,
-        'weight' => 92
-    )
-);
