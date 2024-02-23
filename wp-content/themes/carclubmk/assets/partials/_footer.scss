@@ -1,0 +1,11 @@
+.site-footer {
+    background: $dark_color;
+
+    &__inner {
+        padding: 60px 0;
+    }
+
+    &__legacy {
+        color: #fff;
+    }
+}

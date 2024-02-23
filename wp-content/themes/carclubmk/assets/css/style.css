@@ -80,6 +80,16 @@ a:hover {
   padding: 20px 0;
 }
 
+.site-footer {
+  background: #172b4d;
+}
+.site-footer__inner {
+  padding: 60px 0;
+}
+.site-footer__legacy {
+  color: #fff;
+}
+
 .c-worker {
   background: #fafbfc;
 }
