@@ -6,7 +6,10 @@ get_header(); ?>
 
     <div class="front-page">
         <div class="front-page__inner">
+            
+            <?php
 
+            get_template_part( 'sections/begginer', 'v1' ); ?>
 
             <!-- section array workers -->
             <section class="c-worker">
