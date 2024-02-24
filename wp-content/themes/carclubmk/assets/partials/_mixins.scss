@@ -1,0 +1,17 @@
+@mixin article-date {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+@mixin mobile {
+    @media ( max-width: 768px ) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media ( max-width: 1024px ) {
+        @content;
+    }
+}

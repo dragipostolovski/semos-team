@@ -11,8 +11,8 @@ get_header(); ?>
                 <h1><?php echo get_the_title(); ?></h1>
             </div>
 
-            <div class="article__title">
-                <?php echo get_the_date(); ?>
+            <div class="article__date">
+                <?php echo get_the_date('d.m.Y'); ?>
             </div>
 
             <div class="article__content">
