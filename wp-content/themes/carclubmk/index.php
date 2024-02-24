@@ -7,7 +7,7 @@ get_header(); ?>
     <div class="news container">
 
         <div class="news__title">
-            <h1>Quis eleifend quam adipiscing vitae proin sagittis nisl</h1>
+            <h1><?php echo single_post_title('', false ); ?></h1>
         </div>
 
         <div class="news__articles">

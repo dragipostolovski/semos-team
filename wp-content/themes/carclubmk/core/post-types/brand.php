@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'CCMK_PostType_Brand' ) ) {
+if ( ! class_exists( 'CCMK_PostType_Vehicle' ) ) {
 	/**
 	 * Class responsible for registering a CPT
 	 */
@@ -20,7 +20,7 @@ if ( ! class_exists( 'CCMK_PostType_Brand' ) ) {
 		 *
 		 * @var string
 		 */
-		private string $name = 'brand';
+		private string $name = 'vehicle';
 
 
 		/**
@@ -44,27 +44,27 @@ if ( ! class_exists( 'CCMK_PostType_Brand' ) ) {
 					$this->name,
 					array(
 						'labels'                    => array(
-							'name'                  => __( 'Brands', 'carclubmk' ),
-							'singular_name'         => _x( 'Brand', 'Site post type singular name', 'carclubmk' ),
-							'add_new'               => __( 'Add Brand', 'carclubmk' ),
-							'add_new_item'          => __( 'Add New Brand', 'carclubmk' ),
+							'name'                  => __( 'Vehicles', 'carclubmk' ),
+							'singular_name'         => _x( 'Vehicle', 'Site post type singular name', 'carclubmk' ),
+							'add_new'               => __( 'Add Vehicle', 'carclubmk' ),
+							'add_new_item'          => __( 'Add New Vehicle', 'carclubmk' ),
 							'edit'                  => __( 'Edit', 'carclubmk' ),
-							'edit_item'             => __( 'Edit Brand', 'carclubmk' ),
-							'new_item'              => __( 'New Brand', 'carclubmk' ),
-							'view'                  => __( 'View Brand', 'carclubmk' ),
-							'view_item'             => __( 'View Brand', 'carclubmk' ),
-							'search_items'          => __( 'Search Brands', 'carclubmk' ),
-							'not_found'             => __( 'No Brands found', 'carclubmk' ),
-							'not_found_in_trash'    => __( 'No Brands found in trash', 'carclubmk' ),
-							'parent'                => __( 'Parent Brand', 'carclubmk' ),
-							'menu_name'             => __( 'Brands', 'carclubmk' ),
-							'filter_items_list'     => __( 'Filter Brands', 'carclubmk' ),
-							'items_list_navigation' => __( 'Brands navigation', 'carclubmk' ),
-							'items_list'            => __( 'Brands list', 'carclubmk' ),
-							'featured_image'        => _x( 'Brand Logo', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'carclubmk' ),
-							'set_featured_image'    => _x( 'Set avatar image', 'Overrides the “Set featured image” phrase for this post type. Added in 4.3', 'carclubmk' ),
-							'remove_featured_image' => _x( 'Remove avatar image', 'Overrides the “Remove featured image” phrase for this post type. Added in 4.3', 'carclubmk' ),
-							'use_featured_image'    => _x( 'Use as avatar image', 'Overrides the “Use as featured image” phrase for this post type. Added in 4.3', 'carclubmk' ),
+							'edit_item'             => __( 'Edit Vehicle', 'carclubmk' ),
+							'new_item'              => __( 'New Vehicle', 'carclubmk' ),
+							'view'                  => __( 'View Vehicle', 'carclubmk' ),
+							'view_item'             => __( 'View Vehicle', 'carclubmk' ),
+							'search_items'          => __( 'Search Vehicles', 'carclubmk' ),
+							'not_found'             => __( 'No Vehicles found', 'carclubmk' ),
+							'not_found_in_trash'    => __( 'No Vehicles found in trash', 'carclubmk' ),
+							'parent'                => __( 'Parent Vehicle', 'carclubmk' ),
+							'menu_name'             => __( 'Vehicles', 'carclubmk' ),
+							'filter_items_list'     => __( 'Filter Vehicles', 'carclubmk' ),
+							'items_list_navigation' => __( 'Vehicles navigation', 'carclubmk' ),
+							'items_list'            => __( 'Vehicles list', 'carclubmk' ),
+							'featured_image'        => _x( 'Vehicle Image', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'carclubmk' ),
+							'set_featured_image'    => _x( 'Set vehicle image', 'Overrides the “Set featured image” phrase for this post type. Added in 4.3', 'carclubmk' ),
+							'remove_featured_image' => _x( 'Remove vehicle image', 'Overrides the “Remove featured image” phrase for this post type. Added in 4.3', 'carclubmk' ),
+							'use_featured_image'    => _x( 'Use as vehicle image', 'Overrides the “Use as featured image” phrase for this post type. Added in 4.3', 'carclubmk' ),
 						),
 						'public'              => true,
 						'exclude_from_search' => false,
@@ -86,22 +86,30 @@ if ( ! class_exists( 'CCMK_PostType_Brand' ) ) {
 					)
 				);
 
-                // register_taxonomy_for_object_type( 'category', 'brand' );
-		        // register_taxonomy_for_object_type( 'post_tag', 'brand' );
+                // register_taxonomy_for_object_type( 'category', 'vehicle' );
+		        // register_taxonomy_for_object_type( 'post_tag', 'vehicle' );
 
                 $taxonomies = array(
-                    'course' => array(
-                        'name' => 'Models',
-                        'singular_name' => 'Model',
-                        'object_type' => array( 'brand' ),
+					'brand' => array(
+                        'name' => 'Brands',
+                        'singular_name' => 'Brand',
+                        'object_type' => array( 'vehicle' ),
                         'public'                => true,
                         'publicly_queryable'    => true,
                         'hierarchical'          => true,
 					),
-					'part' => array(
-                        'name' => 'Years',
+                    'model' => array(
+                        'name' => 'Models',
+                        'singular_name' => 'Model',
+                        'object_type' => array( 'vehicle' ),
+                        'public'                => true,
+                        'publicly_queryable'    => true,
+                        'hierarchical'          => true,
+					),
+					'year' => array(
+                        'name' => 'Year',
                         'singular_name' => 'Year',
-                        'object_type' => array( 'brand' ),
+                        'object_type' => array( 'vehicle' ),
                         'public'                => true,
                         'publicly_queryable'    => true,
                         'hierarchical'          => true,

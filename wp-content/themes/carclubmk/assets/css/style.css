@@ -20,7 +20,7 @@ img {
   height: auto;
 }
 
-p {
+p, li {
   font-weight: 300;
   font-size: 18px;
   line-height: 28px;
@@ -71,6 +71,9 @@ a:hover {
   font-size: 20px;
 }
 
+.article__inner {
+  padding-bottom: 40px;
+}
 .article__date {
   font-weight: 300;
   font-size: 18px;
