@@ -5,15 +5,17 @@
  * @package CCMK_Theme
  */
 
+namespace ccmktheme;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'CCMK_PostType_Vehicle' ) ) {
+if ( ! class_exists( 'Vehicle' ) ) {
 	/**
 	 * Class responsible for registering a CPT
 	 */
-	class CCMK_PostType_Brand {
+	class Vehicle {
 
 		/**
 		 * Declare CPT name
@@ -162,5 +164,5 @@ if ( ! class_exists( 'CCMK_PostType_Vehicle' ) ) {
         }
 	}
 
-	new CCMK_PostType_Brand();
+	new Vehicle();
 }
