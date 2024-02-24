@@ -9,26 +9,24 @@ get_header(); ?>
             
             <?php
             
-            if( have_posts() ) { 
-                while( have_posts() ) { 
+            if( have_posts() ):
+                while( have_posts() ): 
                     the_post(); ?>
 
                     <div class="article__title">
-                        <h1><?php echo get_the_title(); ?></h1>
+                        <h1><?php the_title(); ?></h1>
                     </div>
 
                     <div class="article__date">
-                        <?php echo get_the_date('d.m.Y'); ?>
+                        <?php echo the_date('d.m.Y'); ?>
                     </div>
 
                     <div class="article__content">
-                        <?php echo get_the_content(); ?>
+                        <?php echo the_content(); ?>
                     </div>
                     
-                <?php }
-            } 
-            
-            wp_reset_query(); ?>
+                <?php endwhile;
+            endif; ?>
 
         </div>
     </article>

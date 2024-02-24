@@ -108,9 +108,9 @@ if ( ! class_exists( 'Vehicle' ) ) {
                         'publicly_queryable'    => true,
                         'hierarchical'          => true,
 					),
-					'year' => array(
-                        'name' => 'Year',
-                        'singular_name' => 'Year',
+					'season' => array(
+                        'name' => 'Seasons',
+                        'singular_name' => 'Season',
                         'object_type' => array( 'vehicle' ),
                         'public'                => true,
                         'publicly_queryable'    => true,
