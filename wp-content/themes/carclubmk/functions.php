@@ -76,4 +76,3 @@ function workers() {
 };
 
 require_once 'exercises/isOlder.php';
-require_once 'exercises/control-structures.php';
