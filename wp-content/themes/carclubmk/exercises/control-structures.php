@@ -49,12 +49,12 @@ if( $integerNumber1 > $integerNumber2 ) {
     echo "First n. is smaller than the second one";
 }
 
-require_once 'path/to-file';
-require 'path/to-file';
+// require_once 'path/to-file';
+// require 'path/to-file';
 
 // If the code from a file has already been included, it will not be included again.
 // If the file is not found will show a Warning. Require will throw an Error
-include_once 'path/to/file';
+// include_once 'path/to/file';
 
 
 /**
@@ -77,13 +77,15 @@ function countElementsInArray() {
     ob_start(); ?>
 
     <div class="students-count">
-        <p>The total numbe rof the students is <?php echo count( $students ); ?> </p>
+        <p>The total number of the students is <?php echo count( $students ); ?> </p>
     </div>
     <?php 
 
     $html = ob_get_contents();
 
     return $html;
+
+    // echo ob_get_clean();
 }
 
 countElementsInArray();
