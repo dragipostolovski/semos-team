@@ -13,6 +13,10 @@
 // $_ENV
 
 
+// _DIR_
+// _FILE_
+// _LINE_
+
 // 1. $_SERVER - Server and execution environment information
 
 // SERVER_NAME
