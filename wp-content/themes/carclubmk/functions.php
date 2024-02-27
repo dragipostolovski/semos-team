@@ -76,3 +76,22 @@ function workers() {
 };
 
 require_once 'exercises/isOlder.php';
+
+/**
+ * Change the title output.
+ *
+ * @param string $title
+ * @param string $post_id
+ * 
+ * @return string
+ */
+function filter_title_function( $title, $post_id ) {
+    $post = get_post( $post_id );
+
+    if( $post->post_type == 'page' ) {
+	    return 'Title: ' . $title;
+    }
+
+    return $title;
+}
+// add_filter( 'the_title', 'filter_title_function', 10, 2 );
