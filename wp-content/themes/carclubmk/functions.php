@@ -126,7 +126,11 @@ function contact( WP_REST_Request $request ) {
 add_filter( 'the_title', 'change_single_title', 10, 2 );
 
 function change_single_title( $post_title, $post_id ) {
-    return 'Title: '. $post_title;
+    if( !is_admin() && is_single() ) {
+        return 'Title: '. $post_title;
+    }
+
+    return $post_title;
 }
 
 add_filter( 'the_content', 'change_single_content', 10, 1 );
@@ -134,3 +138,8 @@ add_filter( 'the_content', 'change_single_content', 10, 1 );
 function change_single_content( $content ) {
     return $content . '<p>This is content</p>';
 }
+
+function ccmk_your_function() {
+    echo 'This is inserted at the bottom';
+}
+// add_action( 'wp_footer', 'ccmk_your_function' );
