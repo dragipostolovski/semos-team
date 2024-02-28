@@ -52,7 +52,7 @@ a:hover {
   background: #fafbfc;
 }
 .site-header__inner {
-  padding: 20px 0;
+  padding: 20px 10px;
 }
 
 .site-navigation ul {
