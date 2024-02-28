@@ -121,3 +121,16 @@ function contact( WP_REST_Request $request ) {
         'class' => 'alert-success'
      );
 }
+
+
+add_filter( 'the_title', 'change_single_title', 10, 2 );
+
+function change_single_title( $post_title, $post_id ) {
+    return 'Title: '. $post_title;
+}
+
+add_filter( 'the_content', 'change_single_content', 10, 1 );
+
+function change_single_content( $content ) {
+    return $content . '<p>This is content</p>';
+}
