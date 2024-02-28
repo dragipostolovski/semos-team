@@ -123,17 +123,17 @@ if ( ! function_exists( 'ccmk_enqueue_scripts' ) ) {
 
 if ( ! function_exists( 'ccmk_admin_enqueue_scripts' ) ) {
 	function ccmk_admin_enqueue_scripts() {
-		wp_enqueue_style( 'pe-admin-styles', get_template_directory_uri() . '/assets/css/admin.min.css', array(), filemtime( get_template_directory() . '/assets/css/admin.min.css' ) );
+		wp_enqueue_style( 'ccmk-admin-styles', get_template_directory_uri() . '/assets/css/admin.css', array(), filemtime( get_template_directory() . '/assets/css/admin.css' ) );
 
 		$theme_domain 	= wp_get_theme()->get( 'TextDomain' );
 
-		wp_enqueue_script( 'pe-admin-script', get_template_directory_uri() . '/assets/js/admin.min.js', array(),  wp_get_theme()->get( 'Version' ), array( 'strategy' => 'async', 'in_footer' => true ) );
-		wp_localize_script( 'pe-admin-script', $theme_domain, array(
+		wp_enqueue_script( 'ccmk-admin-script', get_template_directory_uri() . '/assets/js/admin.js', array(),  wp_get_theme()->get( 'Version' ), array( 'strategy' => 'async', 'in_footer' => true ) );
+		wp_localize_script( 'ccmk-admin-script', $theme_domain, array(
 			'site_url'  			=> site_url(),
 			'nonce'     			=> wp_create_nonce( 'wp_rest' ),
 			'screen'				=> get_current_screen()
 		) );
 	}
 
-	// add_action( 'admin_enqueue_scripts', 'ccmk_admin_enqueue_scripts' );
+	add_action( 'admin_enqueue_scripts', 'ccmk_admin_enqueue_scripts' );
 }

@@ -95,3 +95,29 @@ function filter_title_function( $title, $post_id ) {
     return $title;
 }
 // add_filter( 'the_title', 'filter_title_function', 10, 2 );
+
+add_action( 'rest_api_init', 'ccmk_register_routes');
+
+function ccmk_register_routes() {
+
+    register_rest_route( 'ccmk-api/v1', '/subscribe', array(
+        'methods' => WP_REST_Server::CREATABLE,
+        'callback' => 'contact',
+        'validate_callback' => function() {
+            return true;
+        },
+        'permission_callback' => '__return_true',
+    ));
+
+}
+
+function contact( WP_REST_Request $request ) {
+    $params = $request->get_params();
+    $email = $params['email'];
+
+    return array(
+        'response' => true,
+        'message' => __( 'Thank you for subscribing.', 'projectsengine' ),
+        'class' => 'alert-success'
+     );
+}
