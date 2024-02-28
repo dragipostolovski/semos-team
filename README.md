@@ -31,6 +31,10 @@
 
 ЗАДАЧИ:
 
+- Да се клонира ова 'repository'.
+- Да креирате нов 'branch' со git checkout -b feature/opis-na-branch со овој облик.
+- git add . | git commit -m "opis" | git push origin feature/opis-na-branch
+
 
 Слободанка:
 
