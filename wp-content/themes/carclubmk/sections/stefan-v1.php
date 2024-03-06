@@ -2,25 +2,25 @@
 
     $cards = array(
         array( 
-            'img' => '<img src="../assets/img/person1.jpg" alt="Person1">',
+            'img' => 'person1.jpg',
             'title' => 'Aurora Frost',
             'desc' => 'Being part of a CarClubMK is like having a second family who shares your passion for automobiles. Its amazing how bonds can form over a shared love for horsepower and sleek designs.',
             'color' => '#06C90D'
         ),
         array(
-            'img' => '<img src="../assets/img/person2.jpg" alt="Person2">',
+            'img' => "person2.jpg",
             'title' => 'Jackson Steele',
             'desc' => 'Joining a CarClubMK broadens my auto knowledge. Discussing engine mods and restoration tips with enthusiasts offers endless learning opportunities.',
             'color' => '#06A2C9'
         ),
         array(
-            'img' => '<img src="../assets/img/person3.jpg" alt="Person3">',
+            'img' => 'person3.jpg',
             'title' => 'Lily Evergreen',
             'desc' => 'CarClubMK camaraderie is unmatched. Road trips and Car shows bond us, creating unforgettable memories centered on our shared passion for automobiles.',
             'color' => '#8F06C9'
         ),
         array(
-            'img' => '<img src="../assets/img/person4.jpg" alt="Perosn5">',
+            'img' => 'person4.jpg',
             'title' => 'Xavier Wolfe',
             'desc' => 'Car clubs ignite camaraderie, fueling our shared love for automobiles through knowledge exchange, unforgettable road trips, and unforgettable memories on wheels.',
             'color' => '#C90678'
@@ -29,7 +29,7 @@
 ?>
 
 <style>
-* {
+/* * {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -106,7 +106,7 @@
     border-radius: 10px;
     color: #242424;
     font-size: 0.9em;
-}
+} */
 </style>
 
 <section class="cards_parent">
@@ -122,7 +122,7 @@
             <div class="c-cards_main">
 
                 <div class="c-cards_img_container" style="--color: <?php echo $color ?>;">
-                    <?php echo $card['img']; ?>
+                    <img src="<?php echo get_template_directory_uri() . "/assets/img/" . $card['img']; ?>" alt="<?php echo $card['title']; ?>"/>
                 </div>
 
                 <div class="c-cards_title">
