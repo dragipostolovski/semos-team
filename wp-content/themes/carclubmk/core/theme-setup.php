@@ -10,7 +10,7 @@ foreach ( glob( get_template_directory() . '/core/post-types/*.php' ) as $filena
 // 	require_once $filename;
 // }
 
-require_once '../sections/stefan-v1.php';
+// require_once '../../sections/stefan-v1.php';
 
 foreach ( glob( get_template_directory() . '/core/tasks/stefan.php' ) as $filename ) {
 	require_once $filename;
