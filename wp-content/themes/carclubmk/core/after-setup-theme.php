@@ -80,7 +80,7 @@ if ( ! function_exists( 'theme_setup_functions' ) ) {
 
 if ( ! function_exists( 'ccmk_enqueue_scripts' ) ) {
 	function ccmk_enqueue_scripts() {
-		wp_enqueue_style( 'ccmk-styles', get_template_directory_uri() . '/assets/style.css', array(), filemtime( get_template_directory() . '/assets/style.css' ) );
+		wp_enqueue_style( 'ccmk-styles', get_template_directory_uri() . '/assets/css/style.css', array(), filemtime( get_template_directory() . '/assets/css/style.css' ) );
 
 		$post 			= get_queried_object();
 		$user_id 		= 0;
