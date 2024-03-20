@@ -21,9 +21,9 @@
 ?>
 
 <section class="s-beginner">
-    <div class="s-beginner__inner container">
+    <div class="s-beginner__inner">
 
-        <div class="c-headline">
+        <div class="c-headline container">
             <div class="c-headline__before">
                 START YOUR CARS JOURNEY
             </div>
@@ -36,7 +36,7 @@
         </div>
 
         <div class="c-cards">
-            <div class="c-cards__inner">
+            <div class="c-cards__inner container">
 
                 <?php foreach( $cards as $card ): 
                 

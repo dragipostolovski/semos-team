@@ -9,10 +9,10 @@ get_header(); ?>
             
             <?php
 
-$workers = workers();
+            $workers = workers();
 
-get_template_part( 'sections/beginner', 'v1' ); ?>
-<?php get_template_part( 'sections/stefan', 'v1' ); ?>
+            get_template_part( 'sections/beginner', 'v1' ); ?>
+            <?php get_template_part( 'sections/stefan', 'v1' ); ?>
 
             <!-- section array workers -->
             <section class="c-worker">

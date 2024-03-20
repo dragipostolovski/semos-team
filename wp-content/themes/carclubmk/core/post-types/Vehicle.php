@@ -164,5 +164,5 @@ if ( ! class_exists( 'Vehicle' ) ) {
         }
 	}
 
-	new Vehicle();
+	// new Vehicle();
 }
