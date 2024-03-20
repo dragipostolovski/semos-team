@@ -15,3 +15,5 @@ add_action( 'after_setup_theme', 'theme_setup_functions' );
 add_action( 'wp_head', 'hook_javascript' );
 add_action( 'wp_footer', 'buffer_end' );
 
+// add additionl menu item
+// wp_nav_menu_items
