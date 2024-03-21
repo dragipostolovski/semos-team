@@ -7,5 +7,5 @@ function myFunction() {
               </form>';
     }
 }
-add_action( 'wp_footer', 'myFunction' );
+// add_action( 'wp_footer', 'myFunction' );
 ?>

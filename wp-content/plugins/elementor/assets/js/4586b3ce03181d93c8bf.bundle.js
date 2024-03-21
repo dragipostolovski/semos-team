@@ -1,10 +1,10 @@
-/*! elementor - v3.20.0 - 13-03-2024 */
-(self["webpackChunkelementor"] = self["webpackChunkelementor"] || []).push([["modules_nested-accordion_assets_js_editor_module_js"],{
+/*! elementor - v3.20.0 - 20-03-2024 */
+(self["webpackChunkelementor"] = self["webpackChunkelementor"] || []).push([["modules_nested-tabs_assets_js_editor_module_js"],{
 
-/***/ "../modules/nested-accordion/assets/js/editor/module.js":
-/*!**************************************************************!*\
-  !*** ../modules/nested-accordion/assets/js/editor/module.js ***!
-  \**************************************************************/
+/***/ "../modules/nested-tabs/assets/js/editor/module.js":
+/*!*********************************************************!*\
+  !*** ../modules/nested-tabs/assets/js/editor/module.js ***!
+  \*********************************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -17,19 +17,19 @@ Object.defineProperty(exports, "__esModule", ({
 exports["default"] = void 0;
 var _createClass2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/createClass */ "../node_modules/@babel/runtime/helpers/createClass.js"));
 var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "../node_modules/@babel/runtime/helpers/classCallCheck.js"));
-var _nestedAccordion = _interopRequireDefault(__webpack_require__(/*! ./nested-accordion */ "../modules/nested-accordion/assets/js/editor/nested-accordion.js"));
+var _nestedTabs = _interopRequireDefault(__webpack_require__(/*! ./nested-tabs */ "../modules/nested-tabs/assets/js/editor/nested-tabs.js"));
 var Module = /*#__PURE__*/(0, _createClass2.default)(function Module() {
   (0, _classCallCheck2.default)(this, Module);
-  elementor.elementsManager.registerElementType(new _nestedAccordion.default());
+  elementor.elementsManager.registerElementType(new _nestedTabs.default());
 });
 exports["default"] = Module;
 
 /***/ }),
 
-/***/ "../modules/nested-accordion/assets/js/editor/nested-accordion.js":
-/*!************************************************************************!*\
-  !*** ../modules/nested-accordion/assets/js/editor/nested-accordion.js ***!
-  \************************************************************************/
+/***/ "../modules/nested-tabs/assets/js/editor/nested-tabs.js":
+/*!**************************************************************!*\
+  !*** ../modules/nested-tabs/assets/js/editor/nested-tabs.js ***!
+  \**************************************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -39,26 +39,26 @@ var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/inte
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports["default"] = exports.NestedAccordion = void 0;
+exports["default"] = exports.NestedTabs = void 0;
 var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "../node_modules/@babel/runtime/helpers/classCallCheck.js"));
 var _createClass2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/createClass */ "../node_modules/@babel/runtime/helpers/createClass.js"));
 var _inherits2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/inherits */ "../node_modules/@babel/runtime/helpers/inherits.js"));
 var _possibleConstructorReturn2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "../node_modules/@babel/runtime/helpers/possibleConstructorReturn.js"));
 var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "../node_modules/@babel/runtime/helpers/getPrototypeOf.js"));
-var _view = _interopRequireDefault(__webpack_require__(/*! ./views/view */ "../modules/nested-accordion/assets/js/editor/views/view.js"));
+var _view = _interopRequireDefault(__webpack_require__(/*! ./views/view */ "../modules/nested-tabs/assets/js/editor/views/view.js"));
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2.default)(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2.default)(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2.default)(this, result); }; }
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-var NestedAccordion = /*#__PURE__*/function (_elementor$modules$el) {
-  (0, _inherits2.default)(NestedAccordion, _elementor$modules$el);
-  var _super = _createSuper(NestedAccordion);
-  function NestedAccordion() {
-    (0, _classCallCheck2.default)(this, NestedAccordion);
+var NestedTabs = /*#__PURE__*/function (_elementor$modules$el) {
+  (0, _inherits2.default)(NestedTabs, _elementor$modules$el);
+  var _super = _createSuper(NestedTabs);
+  function NestedTabs() {
+    (0, _classCallCheck2.default)(this, NestedTabs);
     return _super.apply(this, arguments);
   }
-  (0, _createClass2.default)(NestedAccordion, [{
+  (0, _createClass2.default)(NestedTabs, [{
     key: "getType",
     value: function getType() {
-      return 'nested-accordion';
+      return 'nested-tabs';
     }
   }, {
     key: "getView",
@@ -66,18 +66,18 @@ var NestedAccordion = /*#__PURE__*/function (_elementor$modules$el) {
       return _view.default;
     }
   }]);
-  return NestedAccordion;
+  return NestedTabs;
 }(elementor.modules.elements.types.NestedElementBase);
-exports.NestedAccordion = NestedAccordion;
-var _default = NestedAccordion;
+exports.NestedTabs = NestedTabs;
+var _default = NestedTabs;
 exports["default"] = _default;
 
 /***/ }),
 
-/***/ "../modules/nested-accordion/assets/js/editor/views/view.js":
-/*!******************************************************************!*\
-  !*** ../modules/nested-accordion/assets/js/editor/views/view.js ***!
-  \******************************************************************/
+/***/ "../modules/nested-tabs/assets/js/editor/views/view.js":
+/*!*************************************************************!*\
+  !*** ../modules/nested-tabs/assets/js/editor/views/view.js ***!
+  \*************************************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -103,14 +103,28 @@ var View = /*#__PURE__*/function (_$e$components$get$ex) {
     return _super.apply(this, arguments);
   }
   (0, _createClass2.default)(View, [{
+    key: "filter",
+    value: function filter(child, index) {
+      child.attributes.dataIndex = index + 1;
+      return true;
+    }
+  }, {
     key: "onAddChild",
     value: function onAddChild(childView) {
-      var _childView$_parent$$e;
-      var accordionId = (_childView$_parent$$e = childView._parent.$el.find('summary')) === null || _childView$_parent$$e === void 0 ? void 0 : _childView$_parent$$e.attr('aria-controls');
+      var _childView$_parent$$e, _childView$_parent$$e2;
+      var widgetNumber = (_childView$_parent$$e = childView._parent.$el.find('.e-n-tabs')[0]) === null || _childView$_parent$$e === void 0 ? void 0 : _childView$_parent$$e.dataset.widgetNumber,
+        index = childView.model.attributes.dataIndex,
+        tabId = (_childView$_parent$$e2 = childView._parent.$el.find(".e-n-tab-title[data-tab-index=\"".concat(index, "\"]"))) === null || _childView$_parent$$e2 === void 0 ? void 0 : _childView$_parent$$e2.attr('id');
       childView.$el.attr({
-        role: 'region',
-        'aria-labelledby': accordionId
+        id: 'e-n-tab-content-' + widgetNumber + '' + index,
+        role: 'tabpanel',
+        'aria-labelledby': tabId,
+        'data-tab-index': index,
+        style: '--n-tabs-title-order: ' + index + ';'
       });
+      if (1 === index) {
+        childView.$el.addClass('e-active');
+      }
     }
   }]);
   return View;
@@ -265,17 +279,17 @@ module.exports = _setPrototypeOf, module.exports.__esModule = true, module.expor
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var _typeof = (__webpack_require__(/*! ./typeof.js */ "../node_modules/@babel/runtime/helpers/typeof.js")["default"]);
-function _toPrimitive(input, hint) {
-  if (_typeof(input) !== "object" || input === null) return input;
-  var prim = input[Symbol.toPrimitive];
-  if (prim !== undefined) {
-    var res = prim.call(input, hint || "default");
-    if (_typeof(res) !== "object") return res;
+function toPrimitive(t, r) {
+  if ("object" != _typeof(t) || !t) return t;
+  var e = t[Symbol.toPrimitive];
+  if (void 0 !== e) {
+    var i = e.call(t, r || "default");
+    if ("object" != _typeof(i)) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
-  return (hint === "string" ? String : Number)(input);
+  return ("string" === r ? String : Number)(t);
 }
-module.exports = _toPrimitive, module.exports.__esModule = true, module.exports["default"] = module.exports;
+module.exports = toPrimitive, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ }),
 
@@ -287,13 +301,13 @@ module.exports = _toPrimitive, module.exports.__esModule = true, module.exports[
 
 var _typeof = (__webpack_require__(/*! ./typeof.js */ "../node_modules/@babel/runtime/helpers/typeof.js")["default"]);
 var toPrimitive = __webpack_require__(/*! ./toPrimitive.js */ "../node_modules/@babel/runtime/helpers/toPrimitive.js");
-function _toPropertyKey(arg) {
-  var key = toPrimitive(arg, "string");
-  return _typeof(key) === "symbol" ? key : String(key);
+function toPropertyKey(t) {
+  var i = toPrimitive(t, "string");
+  return "symbol" == _typeof(i) ? i : String(i);
 }
-module.exports = _toPropertyKey, module.exports.__esModule = true, module.exports["default"] = module.exports;
+module.exports = toPropertyKey, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 /***/ })
 
 }]);
-//# sourceMappingURL=040b7af5d80abfa2be44.bundle.js.map
+//# sourceMappingURL=4586b3ce03181d93c8bf.bundle.js.map
