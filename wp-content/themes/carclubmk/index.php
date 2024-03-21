@@ -44,6 +44,10 @@ get_header(); ?>
                                 <div class="c-article__content">
                                     <?php the_excerpt(); ?>
                                 </div>
+
+                                <div class="c-article__tags">
+                                    <?php the_tags('', ' ', ''); ?>
+                                </div>
                             </div>
 
                         </div>
