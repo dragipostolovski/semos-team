@@ -123,7 +123,7 @@ function contact( WP_REST_Request $request ) {
 }
 
 
-add_filter( 'the_title', 'change_single_title', 10, 2 );
+// add_filter( 'the_title', 'change_single_title', 10, 2 );
 
 function change_single_title( $post_title, $post_id ) {
     if( !is_admin() && is_single() ) {

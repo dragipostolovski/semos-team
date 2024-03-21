@@ -1,12 +1,12 @@
 const route = '/wp-json/ccmk-api/v1/';
 const nonce = carclubmk.nonce;
 
-const handleSubmit = async () => {
+const handleSubmit = () => {
     const url = 'subscribe';
     const data = {};
     
     // Default options are marked with *
-    const response = await fetch(route + url, {
+    const response = fetch( route + url, {
         method: "post", // *GET, POST, PUT, DELETE, etc.
         mode: "cors", // no-cors, *cors, same-origin
         cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
@@ -29,5 +29,3 @@ const handleSubmit = async () => {
         });
     }
 };
-
-handleSubmit();

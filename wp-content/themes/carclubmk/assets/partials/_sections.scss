@@ -70,6 +70,31 @@
     
     &__inner {
         padding: 10px;
+        display: flex;
+        gap: 25px;
+        border: 1px solid #dfe1e6;
+        border-radius: 5px;
+    }
+
+    &__header {
+        flex-basis: 25%;
+    }
+
+    &__body {
+        flex-basis: 75%;
+        padding: 20px 0;
+    }
+
+    &__thumbnail {
+        height: 100%;
+        vertical-align: middle;
+
+        img {
+            display: block;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
     }
 
     &:not(:last-child) {
@@ -78,5 +103,30 @@
 
     &__date {
         @include article-date;
+    }
+
+    .post-categories {
+        list-style: none;
+    }
+
+    &__cat {
+        font-size: 20px;
+
+        a {
+            background: #de350b;
+            padding: 5px 8px;
+            border-radius: 5px;
+            color: #fff;
+        }
+    }
+
+    &__tags {
+        margin-top: 10px;
+
+        a {
+            background: #ebecf0;
+            padding: 5px 8px;
+            border-radius: 5px;
+        }
     }
 }
