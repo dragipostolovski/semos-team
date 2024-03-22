@@ -78,7 +78,7 @@ function ccmk_register_post_type() {
             )
         );
 
-        create_taxonomies( $taxonomies );
+        create_taxonomies( $taxonomies, false );
 
         // register_taxonomy_for_object_type( 'category', 'car' );
         // register_taxonomy_for_object_type( 'post_tag', 'car' );

@@ -1,0 +1,16 @@
+.car-filters {
+    display: block;
+
+    span {
+        padding: 5px 10px;
+        background: grey;
+        cursor: pointer;
+        color: #fff;
+        border-radius: 5px;
+    }
+}
+
+.car-results {
+    margin-top: 20px;
+    display: block;
+}

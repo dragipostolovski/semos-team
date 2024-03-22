@@ -114,7 +114,8 @@ if ( ! function_exists( 'ccmk_enqueue_scripts' ) ) {
             'post_id' 				=> get_queried_object_id(),
 			'is_user_logged_in'		=> is_user_logged_in(),
 			'user_id' 				=> $user_id,
-			'post_type'				=> $post_type
+			'post_type'				=> $post_type,
+			'CCMK_REST_ROUTE'      	=> CCMK_REST_ROUTE
 		) );
 	}
 

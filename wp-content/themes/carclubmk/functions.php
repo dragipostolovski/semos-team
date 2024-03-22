@@ -5,6 +5,9 @@
 // Se kreira nov fajl i so require_once ili require ke go vklucime tuka za WP da moze da go procita.
 require_once 'core/theme-setup.php';
 
+define( 'CCMK_REST_ROUTE', 'ccmk-api/v1' );
+
+
 /**
  * This function will return array of workers with their information.
  *
@@ -100,9 +103,19 @@ add_action( 'rest_api_init', 'ccmk_register_routes');
 
 function ccmk_register_routes() {
 
-    register_rest_route( 'ccmk-api/v1', '/subscribe', array(
-        'methods' => WP_REST_Server::CREATABLE,
-        'callback' => 'contact',
+    register_rest_route( CCMK_REST_ROUTE, '/filter-cars', array(
+        'methods' => WP_REST_Server::CREATABLE, // post
+        'callback' => 'filter_cars',
+        'validate_callback' => function() {
+            return true;
+        },
+        'permission_callback' => '__return_true',
+    ));
+
+    
+    register_rest_route( CCMK_REST_ROUTE, '/register', array(
+        'methods' => WP_REST_Server::CREATABLE, // post
+        'callback' => 'register_user',
         'validate_callback' => function() {
             return true;
         },
@@ -111,15 +124,73 @@ function ccmk_register_routes() {
 
 }
 
-function contact( WP_REST_Request $request ) {
+function filter_cars( WP_REST_Request $request ) {
     $params = $request->get_params();
-    $email = $params['email'];
+    $term = $params['term'];
+
+    $posts = get_posts( array(
+        'post_type'   => 'car',
+        'order' => 'ASC',
+        'orderby' => 'date',
+
+        'tax_query' => array(
+            // 'relation' => 'OR',
+            array(
+                'taxonomy' => 'season',
+                'field' => 'slug',
+                'terms' => $term,
+            ),
+        ),
+    ) );
+
+    if( !$posts ) {
+        return array(
+            'response' => false,
+            'message' => 'Sorry we did not found any cars.',
+            'class' => 'alert-error',
+        );
+    }
+
+    $html = '';
+
+    foreach( $posts as $post ):
+        $title = $post->post_title;
+
+        ob_start(); ?>
+
+        <div class="car">
+            <h3 class="car__title"><?php echo $title; ?></h3>
+        </div>
+
+        <?php 
+
+        $html = ob_get_clean(); 
+
+    endforeach;
 
     return array(
         'response' => true,
         'message' => __( 'Thank you for subscribing.', 'projectsengine' ),
-        'class' => 'alert-success'
-     );
+        'class' => 'alert-success',
+        'posts' => $html
+    );
+}
+
+function register_user( WP_REST_Request $request ) {
+    $params = $request->get_params();
+    $email = $params['email'];
+    $password = $params['password'];
+
+    get_user_by( 'email', $email );
+
+    wp_insert_post( );
+
+    return array(
+        'response' => true,
+        'message' => __( 'Thank you for subscribing.', 'projectsengine' ),
+        'class' => 'alert-success',
+        'posts' => $html
+    );
 }
 
 
