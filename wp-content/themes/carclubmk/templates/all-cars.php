@@ -15,10 +15,23 @@
             <?php $posts = get_posts( array(
                 'post_type'   => 'car',
                 'order' => 'ASC',
-                'orderby' => 'date'
-            ) ); 
+                'orderby' => 'date',
+                'tax_query' => array(
+                    'relation' => 'OR',
+                    array(
+                        'taxonomy' => 'brand',
+                        'field' => 'slug',
+                        'terms' => 'toyota',
+                    ),
+                    array(
+                        'taxonomy' => 'brand',
+                        'field' => 'slug',
+                        'terms' => 'mercedes',
+                    )
+                ),
+            ) );
             
-            echo '<h1>' . $posts[0]->post_title . '</h1>';
+            var_dump( $posts );
             
             ?>
 
